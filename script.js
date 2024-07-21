@@ -52,6 +52,8 @@ const PRODUCTS = [
 function addToCart(button) {
   button.classList.add("btn-loading");
   const cardContainer = button.parentNode.parentNode;
+  const error = cardContainer.querySelector(".error");
+  error && cardContainer.removeChild(error);
   setTimeout(() => {
     button.classList.remove("btn-loading");
     cardContainer.innerHTML += `<div class="error">Error: try later</div>`;
